@@ -1,0 +1,158 @@
+{
+    
+    "Mon":{
+        "07:00 - 08:00":{
+            "title":"Mon",
+            "app":"zoom",
+            "link":""
+        },
+        "16:00 - 17:00":{
+            "title":"Farsi",
+            "app":"zoom",
+            "link":""
+        },
+        "20:00 - 21:00":{
+            "title":"Farsi",
+            "app":"zoom",
+            "link":""
+        },
+        "22:00 - 23:00":{
+            "title":"Farsi",
+            "app":"zoom",
+            "link":""
+        }
+    },
+    "Tue":{
+        "07:00 - 08:00":{
+            "title":"English",
+            "app":"zoom",
+            "link":""
+        },
+        "16:00 - 17:00":{
+            "title":"Farsi",
+            "app":"zoom",
+            "link":""
+        },
+        "20:00 - 21:00":{
+            "title":"Farsi",
+            "app":"zoom",
+            "link":""
+        },
+        "22:00 - 23:00":{
+            "title":"Farsi",
+            "app":"zoom",
+            "link":""
+        }
+    },
+    "Wed":{
+        "07:00 - 08:00":{
+            "title":"Wed",
+            "app":"zoom",
+            "link":""
+        },
+        "16:00 - 17:00":{
+            "title":"Farsi",
+            "app":"zoom",
+            "link":""
+        },
+        "20:00 - 21:00":{
+            "title":"Farsi",
+            "app":"zoom",
+            "link":""
+        },
+        "22:00 - 23:00":{
+            "title":"Farsi",
+            "app":"zoom",
+            "link":""
+        }
+    },
+    "Thu":{
+        "07:00 - 08:00":{
+            "title":"Thu",
+            "app":"zoom",
+            "link":""
+        },
+        "16:00 - 17:00":{
+            "title":"Farsi",
+            "app":"zoom",
+            "link":""
+        },
+        "20:00 - 21:00":{
+            "title":"Farsi",
+            "app":"zoom",
+            "link":""
+        },
+        "22:00 - 23:00":{
+            "title":"Farsi",
+            "app":"zoom",
+            "link":""
+        }
+    },
+    "Fri":{
+        "07:00 - 08:00":{
+            "title":"English",
+            "app":"zoom",
+            "link":""
+        },
+        "16:00 - 17:00":{
+            "title":"Farsi",
+            "app":"zoom",
+            "link":""
+        },
+        "20:00 - 21:00":{
+            "title":"Farsi",
+            "app":"zoom",
+            "link":""
+        },
+        "22:00 - 23:00":{
+            "title":"Farsi",
+            "app":"zoom",
+            "link":""
+        }
+    },
+    "Sat":{
+        "07:00 - 08:00":{
+            "title":"English",
+            "app":"zoom",
+            "link":""
+        },
+        "16:00 - 17:00":{
+            "title":"Farsi",
+            "app":"zoom",
+            "link":""
+        },
+        "20:00 - 21:00":{
+            "title":"Farsi",
+            "app":"zoom",
+            "link":""
+        },
+        "22:00 - 23:00":{
+            "title":"Farsi",
+            "app":"zoom",
+            "link":""
+        }
+    },
+    "Sun":{
+        "07:00 - 08:00":{
+            "title":"English",
+            "app":"zoom",
+            "link":""
+        },
+        "16:00 - 17:00":{
+            "title":"Farsi",
+            "app":"zoom",
+            "link":""
+        },
+        "20:00 - 21:00":{
+            "title":"Farsi",
+            "app":"zoom",
+            "link":""
+        },
+        "22:00 - 23:00":{
+            "title":"Farsi",
+            "app":"zoom",
+            "link":""
+        }
+    }
+    
+}
