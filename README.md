@@ -113,4 +113,7 @@ In this case, you can see the result of changes in the code instantly in your lo
 Note: This condition is not optimal for server use.
 
 ### Compiles and minifies for production
+```bash
+npm run build
+```
 Make a zip file from the created ```dist``` folder and upload it to your server and extract it.
