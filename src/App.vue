@@ -651,6 +651,9 @@
 import MeetingCard from "./components/MeetingCard";
 import timezones from "./static/timezones.json";
 import axios from "axios";
+// import weeklyBase from "./static/weeklyBase.json"
+// import specialMeet from "./static/specialMeet.json"
+
 
 function dayNumber(day) {
   if (day === "Mon") return 1;
@@ -953,7 +956,7 @@ export default {
   watch: {
     timeZoneSelect() {
       axios
-        .get("https://demo2.h-hz.ir/weeklybase.json") // set url weeklybase json
+        .get("<weeklyBase json get request url>") // set url weeklyBase json
         .then(
           (response) =>
             (this.meetingtimelist = this.sortOnKeys(
@@ -963,7 +966,7 @@ export default {
         .catch((error) => console.log(error));
 
       axios
-        .get("https://demo2.h-hz.ir/meetingtime") // set url special json
+        .get("<specialMeet json get request url>") // set url specialMeet json
         .then((response) =>
           console.log(
             (this.meetingSpecial = this.sortOnKeys(
@@ -972,6 +975,8 @@ export default {
           )
         )
         .catch((error) => console.log(error));
+      // this.meetingtimelist = this.sortOnKeys(objectification(weeklyBase, this.timeZoneSelect)),
+      // this.meetingSpecial = this.sortOnKeys(objectification(specialMeet, this.timeZoneSelect))
     },
     group() {
       this.drawer = false;
