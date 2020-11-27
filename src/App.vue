@@ -650,9 +650,8 @@
 <script>
 import MeetingCard from "./components/MeetingCard";
 import timezones from "./static/timezones.json";
-import axios from "axios";
-// import weeklyBase from "./static/weeklyBase.json"
-// import specialMeet from "./static/specialMeet.json"
+import weeklyBase from "./static/weeklyBase.json"
+import specialMeet from "./static/specialMeet.json"
 
 
 function dayNumber(day) {
@@ -954,30 +953,6 @@ export default {
       nowTime.getFullYear();
   },
   watch: {
-    timeZoneSelect() {
-      axios
-        .get("<weeklyBase json get request url>") // set url weeklyBase json
-        .then(
-          (response) =>
-            (this.meetingtimelist = this.sortOnKeys(
-              objectification(response.data, this.timeZoneSelect)
-            ))
-        )
-        .catch((error) => console.log(error));
-
-      axios
-        .get("<specialMeet json get request url>") // set url specialMeet json
-        .then((response) =>
-          console.log(
-            (this.meetingSpecial = this.sortOnKeys(
-              objectificationSpecialTime(response.data, this.timeZoneSelect)
-            ))
-          )
-        )
-        .catch((error) => console.log(error));
-      // this.meetingtimelist = this.sortOnKeys(objectification(weeklyBase, this.timeZoneSelect)),
-      // this.meetingSpecial = this.sortOnKeys(objectification(specialMeet, this.timeZoneSelect))
-    },
     group() {
       this.drawer = false;
     },

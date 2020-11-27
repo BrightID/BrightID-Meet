@@ -1,4 +1,5 @@
 # BrightID-Meet
+<<<<<<< HEAD
 BrightID-Meet is a Vue.js project that usable for online class schedules and business meetings schedule and reminding them.
 For a better understanding, you can refer to the [meetings section](https://brightid.org/meet) of the [BrightID](https://www.brightid.org/) site.
 
@@ -47,9 +48,24 @@ See [Google Calendar API]( https://developers.google.com/calendar/overview) for 
 ### json's URLs:
 
 Step1. Make two JSON files like the sample files for yourself.
+=======
 
-[weeklyBase.json](https://github.com/BrightID/BrightID-Meet/blob/main/src/static/weeklybase.json)  | [specialMeet.json](https://github.com/BrightID/BrightID-Meet/blob/main/src/static/specialMeeting.json)
+BrightID-Meet is a web app to list BrightID meetings for different timezones and can be used for other listing any sort of weekly events like online courses.
+BrightID-Meet is implemented in Vus.js.
+You can find a running demo on [BrightID meet](https://brightid.org/meet) page.
 
+Two types of meetings/events can be defined to be listed in BrightID-meet:
+
+A. Weekly meetings that are displayed repeatedly on a specific week day on defined time. These meetings should be defined in [weeklybase.json](https://github.com/BrightID/BrightID-Meet/blob/main/src/static/weeklybase.json) file.
+
+B. One time meeting that are only displayed on defined date and time. These meetings should be defined in [specialMeet.json](https://github.com/BrightID/BrightID-Meet/blob/main/src/static/specialMeeting.json) file.
+
+Note: Times should be set in UTC (Coordinated Universal Time) time. BrightID-Meet automatically converts UTC times set in json files to local times based on client timezone.
+>>>>>>> 48b0580acf6b9d11738e10e755a73cac51cd1274
+
+## Features
+
+<<<<<<< HEAD
 Step2. Upload JSON files to your server and set a get request for them.
 
 Step3. Go to ```./src/App.vue``` and in the ```<script>``` section, paste the URLs set in step 2 in the appropriate place.
@@ -65,19 +81,14 @@ timeZoneSelect() {
             ))
         )
         .catch((error) => console.log(error));
+=======
+### Local time:
+BrightID-Meet list meetings in client local time. Users can also change timezone using a selectbox on top of the meetings page.
+>>>>>>> 48b0580acf6b9d11738e10e755a73cac51cd1274
 
-      axios
-        .get("<specialMeet json get request url>") // set url specialMeet json
-        .then((response) =>
-          console.log(
-            (this.meetingSpecial = this.sortOnKeys(
-              objectificationSpecialTime(response.data, this.timeZoneSelect)
-            ))
-          )
-        )
-        .catch((error) => console.log(error));
-    },
+Note: Timezones can be configured by editing [timezones.json](https://github.com/BrightID/BrightID-Meet/blob/main/src/static/timezones.json).
 
+<<<<<<< HEAD
 ```
 Note: If your JSON file format is different from the sample file, the program will not run properly.
 
@@ -94,26 +105,41 @@ To do this, go to ```./src/App.vue``` and uncomment on the following code
 ```
 And comment on Axios.
 Put your Jason files in the ```./src/static/```.
+=======
+### Google Calendar:
+BrightID-Meet enables users to add meetings their google calendar.
 
-### Install npm:
+### Responsive:
+BrightId-Meet is designed to be properly shown on both desktop and mobile phones.
+
+## Installation
+>>>>>>> 48b0580acf6b9d11738e10e755a73cac51cd1274
+
+### Installing dependencies:
 ```bash
 git clone https://github.com/BrightID/BrightID-Meet.git
-cd 'BrightID-Meet'
+cd BrightID-Meet
 npm install
 ```
-Note: If you do not have npm installed on your system, visit [get npm](https://www.npmjs.com/get-npm).
 
+### Configuring:
+#### Google calendar API key:
+- Enable google calendar API under your google account and create an API key following [this guide](https://developers.google.com/calendar/quickstart/js).
+- Configure `apiKey` and `clientId` in [main.js](https://github.com/BrightID/BrightID-Meet/blob/main/src/main.js#L8).
 
-### Compiles and hot-reloads for development:
+Note: See [Google Calendar API]( https://developers.google.com/calendar/overview) for more information.
+
+#### Update meetings json files:
+
+- [weeklyBase.json](https://github.com/BrightID/BrightID-Meet/blob/main/src/static/weeklybase.json)
+- [specialMeet.json](https://github.com/BrightID/BrightID-Meet/blob/main/src/static/specialMeeting.json)
+
+### Running for development:
 ```bash
 npm run serve
 ```
-In this case, you can see the result of changes in the code instantly in your localhost.
-
-Note: This condition is not optimal for server use.
-
-### Compiles and minifies for production
+### Building for production:
 ```bash
 npm run build
 ```
-Make a zip file from the created ```dist``` folder and upload it to your server and extract it.
+This will create a `dist` folder that you can place on a production web server like nginx.
