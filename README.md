@@ -1,3 +1,5 @@
+# BrightID-Meet
+
 BrightID-Meet is a web app to list BrightID meetings for different timezones and can be used for other listing any sort of weekly events like online courses.
 BrightID-Meet is implemented in Vus.js.
 
@@ -9,7 +11,7 @@ A. Weekly meetings that are displayed repeatedly on a specific week day on defin
 
 B. One time meeting that are only displayed on defined date and time. These meetings should be defined in [specialMeet.json](https://github.com/BrightID/BrightID-Meet/blob/main/src/static/specialMeeting.json) file.
 
--Note: Times should be set in UTC (Coordinated Universal Time) time. BrightID-Meet automatically converts UTC times set in json files to local times based on client timezone.
+Note: Times should be set in UTC (Coordinated Universal Time) time. BrightID-Meet automatically converts UTC times set in json files to local times based on client timezone.
 
 ## Features
 ### Local time
