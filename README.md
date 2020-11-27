@@ -1,21 +1,21 @@
 # BrightID-Meet
-BrightID-Meet is a Vus.js project that usable for Online class schedule and business meetings schedule and remind them.
+BrightID-Meet is a Vue.js project that usable for online class schedules and business meetings schedule and reminding them.
 For a better understanding, you can refer to the [meetings section](https://brightid.org/meet) of the [BrightID](https://www.brightid.org/) site.
 
-#### There are two types of meetings on the this project:
-A. weeklyBase: They are displayed repeatedly on a specific day and time each week and Once the meetings are set in a json file (called weeklyBase), they are displayed each week on that specific day.
+#### There are two types of meetings on this project:
+A. weeklyBase: They are displayed repeatedly on a specific day and time each week and once the meetings are set in a JSON file (called "weeklyBase"), they are displayed each week on that specific day.
 
-B. specialMeet: These meetings are only displayed on a specific day (for example, January 23, 2020).And by setting a special meetings in another json file (called specialMeet), those meetings will be displayed only on that specific day and time.
+B. specialMeet: These meetings are only displayed on a specific day (for example, January 23, 2020). And by setting a special meeting in another JSON file (called "specialMeet"), those meetings will be displayed only on that specific day and time.
 
-Note: The written format of json files must be the same as the sample.
+Note: The written format of JSON files must be the same as the sample.
 [weeklyBase.json](https://github.com/BrightID/BrightID-Meet/blob/main/src/static/weeklybase.json)  | [specialMeet.json](https://github.com/BrightID/BrightID-Meet/blob/main/src/static/specialMeeting.json)
 
 ## Capabilities of BrightID-Meet
 ### Local time:
-BrightID-Meet converts the times that set in json files to client local time. But if the client wants to see another local time, this feature is provided for him.
+BrightID-Meet converts the times that are set in JSON files to client local time. But if the client wants to see another local time, this feature is provided for him.
 
-Note: In json files, set the times based on UTC (Coordinated Universal Time) time.
-BrightID-Meet automatically converts the UTC times set in json files to local times according to the client's choice.
+Note: In JSON files, set the times based on UTC (Coordinated Universal Time) time.
+BrightID-Meet automatically converts the UTC times set in JSON files to local time according to the client's choice.
 
 The source of the time zone list is [
 timezones.json](https://github.com/dmfilipenko/timezones.json.)
@@ -24,10 +24,10 @@ timezones.json](https://github.com/dmfilipenko/timezones.json.)
 BrightID-Meet can insert meetings in the Google Client calendar at the request of the client and entering the correct settings by the developer (such as API key, etc.). In this case, by default, it reminds the client 30 minutes before the start of the meeting.
 
 ### Responsive:
-BrightId-Meet is responsive in 2 levels. The first level is suitable for laptop and desktop monitors, large monitors and other level suitable for mobile phones and tablets.
+BrightID-Meet is responsive on 2 levels. The first level is suitable for laptops, desktops, and large monitors and the other level suitable for mobile phones and tablets.
 
 ## Installation
-### Set the API key and URL of json files:
+### Set the API key and URL of JSON files:
 #### Google calendar API key:
 Step1. Go to [Browser Quickstart]( https://developers.google.com/calendar/quickstart/js) and do the necessary work.
 
@@ -46,11 +46,11 @@ See [Google Calendar API]( https://developers.google.com/calendar/overview) for 
 
 ### json's URLs:
 
-Step1. Make two json files like the sample files for yourself.
+Step1. Make two JSON files like the sample files for yourself.
 
 [weeklyBase.json](https://github.com/BrightID/BrightID-Meet/blob/main/src/static/weeklybase.json)  | [specialMeet.json](https://github.com/BrightID/BrightID-Meet/blob/main/src/static/specialMeeting.json)
 
-Step2. Upload json files to your server and set a get request for them.
+Step2. Upload JSON files to your server and set a get request for them.
 
 Step3. Go to ```./src/App.vue``` and in the ```<script>``` section, paste the URLs set in step 2 in the appropriate place.
 
@@ -79,9 +79,9 @@ timeZoneSelect() {
     },
 
 ```
-Note: If your json file format is different from the sample file, the program will not run properly.
+Note: If your JSON file format is different from the sample file, the program will not run properly.
 
-You can also use your json files statically (not recommended)
+You can also use your JSON files statically (not recommended)
 
 To do this, go to ```./src/App.vue``` and uncomment on the following code
 ```javascript
@@ -92,7 +92,7 @@ To do this, go to ```./src/App.vue``` and uncomment on the following code
 // this.meetingtimelist = this.sortOnKeys(objectification(weeklyBase, this.timeZoneSelect)),
 // this.meetingSpecial = this.sortOnKeys(objectification(specialMeet, this.timeZoneSelect))
 ```
-And comment on axios.
+And comment on Axios.
 Put your Jason files in the ```./src/static/```.
 
 ### Install npm:
