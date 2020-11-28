@@ -7,9 +7,9 @@ You can find a running demo on [BrightID meet](https://brightid.org/meet) page.
 
 Two types of meetings/events can be defined to be listed in BrightID-meet:
 
-A. Weekly meetings that are displayed repeatedly on a specific week day on defined time. These meetings should be defined in [weeklybase.json](https://github.com/BrightID/BrightID-Meet/blob/main/src/static/weeklybase.json) file.
+A. Weekly meetings that are displayed repeatedly on a specific week day on defined time. These meetings should be defined in [weeklybase.json](https://github.com/BrightID/BrightID-Meet/blob/main/public/weeklyBase.json) file.
 
-B. One time meeting that are only displayed on defined date and time. These meetings should be defined in [specialMeet.json](https://github.com/BrightID/BrightID-Meet/blob/main/src/static/specialMeeting.json) file.
+B. One time meeting that are only displayed on defined date and time. These meetings should be defined in [specialMeet.json](https://github.com/BrightID/BrightID-Meet/blob/main/public/specialMeeting.json) file.
 
 Note: Times should be set in UTC (Coordinated Universal Time) time. BrightID-Meet automatically converts UTC times set in json files to local times based on client timezone.
 
