@@ -650,9 +650,8 @@
 <script>
 import MeetingCard from "./components/MeetingCard";
 import timezones from "./static/timezones.json";
-import weeklyBase from "./static/weeklyBase.json"
-import specialMeet from "./static/specialMeet.json"
-
+import specialMeet from "../public/specialMeeting.json";
+import weeklyBase from "../public/weeklyBase.json";
 
 function dayNumber(day) {
   if (day === "Mon") return 1;
@@ -953,6 +952,14 @@ export default {
       nowTime.getFullYear();
   },
   watch: {
+    timeZoneSelect() {
+      (this.meetingtimelist = this.sortOnKeys(
+        objectification(weeklyBase, this.timeZoneSelect)
+      )),
+        (this.meetingSpecial = this.sortOnKeys(
+          objectificationSpecialTime(specialMeet, this.timeZoneSelect)
+        ));
+    },
     group() {
       this.drawer = false;
     },
