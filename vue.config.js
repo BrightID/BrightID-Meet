@@ -1,9 +1,6 @@
 module.exports = {
-  baseUrl: 'https://www.brightid.org/meet',
+  publicPath:process.env.NODE_ENV === 'production'? '.': '/',
   "transpileDependencies": [
     "vuetify"
   ]
 }
-// export default new Router({
-//   base: process.env.BASE_URL,
-// });
