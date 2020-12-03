@@ -38,7 +38,7 @@
           <span class="mr-2">GET STARTED</span>
         </v-btn>
       </v-app-bar>
-      <v-toolbar app dark color="black darken-3" class="hidden-md-and-up">
+      <v-app-bar app dark color="black darken-3" class="hidden-md-and-up">
         <v-toolbar-title
           ><a href="https://brightid.org">
             <v-img
@@ -101,7 +101,7 @@
             </v-list>
           </v-card>
         </v-dialog>
-      </v-toolbar>
+      </v-app-bar>
 
       <v-main class="pt-md-15 pt-0">
         <v-row class="header">
