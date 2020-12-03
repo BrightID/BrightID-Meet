@@ -205,8 +205,9 @@ export default {
       });
 
       request.execute(function () {
-        this.dialog = true;
+
       });
+      this.dialog = true;
     },
   },
 };
