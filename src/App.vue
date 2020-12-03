@@ -646,12 +646,13 @@
     </v-app>
   </div>
 </template>
-
+ 
 <script>
 import MeetingCard from "./components/MeetingCard";
 import timezones from "./static/timezones.json";
-import specialMeet from "../public/specialMeeting.json";
-import weeklyBase from "../public/weeklyBase.json";
+// import specialMeet from "../public/specialMeeting.json";
+// import weeklyBase from "../public/weeklyBase.json";
+import axios from "axios";
 
 function dayNumber(day) {
   if (day === "Mon") return 1;
@@ -953,12 +954,20 @@ export default {
   },
   watch: {
     timeZoneSelect() {
-      (this.meetingtimelist = this.sortOnKeys(
-        objectification(weeklyBase, this.timeZoneSelect)
-      )),
-        (this.meetingSpecial = this.sortOnKeys(
-          objectificationSpecialTime(specialMeet, this.timeZoneSelect)
-        ));
+      axios.get("./weeklyBase.json").then((response) => {
+        console.log(response),
+          (this.meetingtimelist = this.sortOnKeys(
+            objectification(response.data, this.timeZoneSelect)
+          ));
+      }),
+        
+        axios.get("./specialMeeting.json").then((response) => {
+          console.log(response),
+            (this.meetingSpecial = this.sortOnKeys(
+              objectificationSpecialTime(response.data, this.timeZoneSelect)
+            ));
+        });
+      
     },
     group() {
       this.drawer = false;
