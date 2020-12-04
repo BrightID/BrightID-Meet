@@ -171,6 +171,9 @@ export default {
       return this.date.split(" ")[1];
     },
   },
+  created: function () {
+    this.dialog = false;
+  },
   methods: {
     isAuthenticated() {
       return this.$isAuthenticated();
@@ -204,9 +207,7 @@ export default {
         resource: event,
       });
 
-      request.execute(function () {
-
-      });
+      request.execute(function () {});
       this.dialog = true;
     },
   },
@@ -217,12 +218,11 @@ export default {
 .mobile_click {
   background-color: #ed7a5d;
 }
-.meeting_card {
-  font-family: "Poppins", sans-serif !important;
-}
-.v-application {
-  font-family: "Poppins", sans-serif !important;
-}
+
+.v-application .text-md-subtitle-1,
+.lastday_card h5,
+.v-application,
+.meeting_card,
 .card_btn,
 .v-application .white--text,
 .v-application .text-h3,
