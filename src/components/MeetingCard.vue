@@ -196,6 +196,7 @@ export default {
       });
     },
     createEvent(summary, start, end, location) {
+      let flag = false;
       var event = {
         summary: summary,
         location: location,
@@ -207,8 +208,12 @@ export default {
         resource: event,
       });
 
-      request.execute(function () {});
-      this.dialog = true;
+      request.execute(function () {
+        this.false = true;
+      });
+      if (flag) {
+        this.dialog = true;
+      }
     },
   },
 };

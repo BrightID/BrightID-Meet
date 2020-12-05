@@ -30,7 +30,7 @@
         class="hidden-sm-and-down"
         color="primary"
         dark
-        to="https://www.brightid.org/#get-started"
+        href="https://www.brightid.org/#get-started"
         target="_blank"
         rounded
       >
