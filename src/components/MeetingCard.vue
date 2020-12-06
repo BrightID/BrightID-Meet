@@ -209,7 +209,7 @@ export default {
       });
 
       request.execute(function () {
-        this.false = true;
+        this.flag = true;
       });
       if (flag) {
         this.dialog = true;
