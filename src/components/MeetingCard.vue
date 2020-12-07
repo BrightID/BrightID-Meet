@@ -101,7 +101,7 @@
           Google calendar
         </v-card-title>
 
-        <v-card-text>Event has been set successfully.</v-card-text>
+        <v-card-text>{{ dialogmsg }}</v-card-text>
 
         <v-divider></v-divider>
 
@@ -149,6 +149,8 @@ export default {
       dialog: false,
       setEventStatus: false,
       mobileClick: false,
+      dialogmsg: "",
+      createEventStatus: "",
     };
   },
   computed: {
@@ -180,11 +182,20 @@ export default {
     },
     initClient(summary, start, end, location) {
       if (this.isAuthenticated()) {
-        this.createEvent(summary, start, end, location);
+        this.createEventStatus = this.createEvent(
+          summary,
+          start,
+          end,
+          location
+        );
       } else {
         this.$login();
-        this.createEvent(summary, start, end, location);
-        this.dialog = true;
+        this.createEventStatus = this.createEvent(
+          summary,
+          start,
+          end,
+          location
+        );
       }
     },
     addEvent(summary, start, end, location) {
@@ -196,7 +207,6 @@ export default {
       });
     },
     createEvent(summary, start, end, location) {
-      let flag = false;
       var event = {
         summary: summary,
         location: location,
@@ -208,12 +218,25 @@ export default {
         resource: event,
       });
 
-      request.execute(function () {
-        this.flag = true;
+      request.execute((response) => {
+        if (response.status === "confirmed") {
+          this.dialog = true;
+          this.dialogmsg = "Event added to your calendar successfully!";
+        }
       });
-      if (flag) {
-        this.dialog = true;
-      }
+      this.gapi.load("client", {
+        onerror: function () {
+          // Handle loading error.
+          this.dialog = true;
+          this.dialogmsg = "Error!";
+        },
+        timeout: 8000, // 8 seconds.
+        ontimeout: function () {
+          // Handle timeout.
+          this.dialog = true;
+          this.dialogmsg = "Timeout error!";
+        },
+      });
     },
   },
 };
