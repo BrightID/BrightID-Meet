@@ -17,7 +17,7 @@
       <div class="hidden-sm-and-down">
         <a href="https://brightid.gitbook.io/" class="mx-6">Tutorial</a>
         <a href="https://www.brightid.org/meet" class="mx-6"
-          >Verification Parties</a
+          >Connection Parties</a
         >
         <a href="https://www.brightid.org/#use-in-your-project" class="mx-6"
           >Use in your Project</a
@@ -86,7 +86,7 @@
             </v-row>
             <v-row justify="center" class="black py-4">
               <a href="https://brightid.gitbook.io/" class="text-h5"
-                >Verification Parties</a
+                >Connection Parties</a
               >
             </v-row>
             <v-row justify="center" class="black py-4">
@@ -107,7 +107,7 @@
         <v-col align-self="center" cols="5" offset="1"
           ><h1 class="white--text text-md-h3 text-h5 font-weight-bold">
             BrightID <br />
-            Verification Parties
+            Connection Parties
           </h1></v-col
         >
         <v-col cols="5" align-self="center">
