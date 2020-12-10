@@ -785,8 +785,7 @@ function convertToLocal(meet, timezone, year = -1, month = -1, date = -1) {
   var newDate = new Date(
     month + "/" + date + "/" + year + " " + hour + ":" + minutes + " UTC"
   );
-  newDate.setMinutes(newDate.getMinutes() + newDate.getTimezoneOffset()); //to utc time
-  newDate.setHours(newDate.getHours() + timezone.offset); // to timezone time
+  newDate.setMinutes(newDate.getMinutes() + newDate.getTimezoneOffset() + timezone.offset * 60); //to timezone time
   meet.numDay = newDate.getDay();
   meet.day = numToDay[meet.numDay];
 
@@ -804,8 +803,7 @@ function convertToLocal(meet, timezone, year = -1, month = -1, date = -1) {
   newDate = new Date(
     month + "/" + date + "/" + year + " " + hour + ":" + minutes + " UTC"
   );
-  newDate.setMinutes(newDate.getMinutes() + newDate.getTimezoneOffset()); //to utc time
-  newDate.setHours(newDate.getHours() + timezone.offset); // to timezone time
+  newDate.setMinutes(newDate.getMinutes() + newDate.getTimezoneOffset() + timezone.offset * 60); //to timezone time
   meet.endTime =
     (newDate.getHours().toString().length === 2
       ? newDate.getHours()
