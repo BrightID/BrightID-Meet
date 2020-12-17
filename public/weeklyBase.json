@@ -1,157 +1,216 @@
-{
-    
+{    
     "Mon":{
-        "07:00 - 08:00":{
-            "title":"Mon",
+        "07:00 - 07:20":{
+            "title":"English",
             "app":"zoom",
-            "link":""
+            "link":"https://us02web.zoom.us/j/88536204717?pwd=dW0xRDNsbTZLaTFNUENPTVVjMEVlUT09"
         },
-        "16:00 - 17:00":{
-            "title":"Farsi",
+        "16:00 - 16:20":{
+            "title":"English",
             "app":"zoom",
-            "link":""
+            "link":"https://us02web.zoom.us/j/88536204717?pwd=dW0xRDNsbTZLaTFNUENPTVVjMEVlUT09"
         },
-        "20:00 - 21:00":{
+        "17:00 - 17:20":{
             "title":"Farsi",
-            "app":"zoom",
-            "link":""
+            "app":"google",
+            "link":"https://meet.google.com/xjn-qrrr-sry"
         },
-        "22:00 - 23:00":{
-            "title":"Farsi",
+        "20:00 - 20:20":{
+            "title":"Spanish",
             "app":"zoom",
-            "link":""
+            "link":"https://us02web.zoom.us/j/88536204717?pwd=dW0xRDNsbTZLaTFNUENPTVVjMEVlUT09"
+        },
+        "21:00 - 21:30":{
+            "title":"English",
+            "app":"zoom",
+            "link":"https://us02web.zoom.us/j/88536204717?pwd=dW0xRDNsbTZLaTFNUENPTVVjMEVlUT09"
+        },
+        "22:00 - 22:30":{
+            "title":"English",
+            "app":"discord",
+            "link":"https://us02web.zoom.us/j/88536204717?pwd=dW0xRDNsbTZLaTFNUENPTVVjMEVlUT09"
         }
     },
     "Tue":{
-        "07:00 - 08:00":{
+        "07:00 - 07:20":{
             "title":"English",
             "app":"zoom",
-            "link":""
+            "link":"https://us02web.zoom.us/j/88536204717?pwd=dW0xRDNsbTZLaTFNUENPTVVjMEVlUT09"
         },
-        "16:00 - 17:00":{
-            "title":"Farsi",
+        "16:00 - 16:20":{
+            "title":"English",
             "app":"zoom",
-            "link":""
+            "link":"https://us02web.zoom.us/j/88536204717?pwd=dW0xRDNsbTZLaTFNUENPTVVjMEVlUT09"
         },
-        "20:00 - 21:00":{
+        "17:00 - 17:20":{
             "title":"Farsi",
-            "app":"zoom",
-            "link":""
+            "app":"google",
+            "link":"https://meet.google.com/xjn-qrrr-sry"
         },
-        "22:00 - 23:00":{
-            "title":"Farsi",
+        "20:00 - 20:20":{
+            "title":"Spanish",
             "app":"zoom",
-            "link":""
+            "link":"https://us02web.zoom.us/j/88536204717?pwd=dW0xRDNsbTZLaTFNUENPTVVjMEVlUT09"
+        },
+        "21:00 - 21:30":{
+            "title":"English",
+            "app":"zoom",
+            "link":"https://us02web.zoom.us/j/88536204717?pwd=dW0xRDNsbTZLaTFNUENPTVVjMEVlUT09"
+        },
+        "22:00 - 22:30":{
+            "title":"English",
+            "app":"discord",
+            "link":"https://us02web.zoom.us/j/88536204717?pwd=dW0xRDNsbTZLaTFNUENPTVVjMEVlUT09"
         }
     },
     "Wed":{
-        "07:00 - 08:00":{
-            "title":"Wed",
+        "07:00 - 07:20":{
+            "title":"English",
             "app":"zoom",
-            "link":""
+            "link":"https://us02web.zoom.us/j/88536204717?pwd=dW0xRDNsbTZLaTFNUENPTVVjMEVlUT09"
         },
-        "16:00 - 17:00":{
-            "title":"Farsi",
+        "16:00 - 16:20":{
+            "title":"English",
             "app":"zoom",
-            "link":""
+            "link":"https://us02web.zoom.us/j/88536204717?pwd=dW0xRDNsbTZLaTFNUENPTVVjMEVlUT09"
         },
-        "20:00 - 21:00":{
+        "17:00 - 17:20":{
             "title":"Farsi",
-            "app":"zoom",
-            "link":""
+            "app":"google",
+            "link":"https://meet.google.com/xjn-qrrr-sry"
         },
-        "22:00 - 23:00":{
-            "title":"Farsi",
+        "20:00 - 20:20":{
+            "title":"Spanish",
             "app":"zoom",
-            "link":""
+            "link":"https://us02web.zoom.us/j/88536204717?pwd=dW0xRDNsbTZLaTFNUENPTVVjMEVlUT09"
+        },
+        "21:00 - 21:30":{
+            "title":"English",
+            "app":"zoom",
+            "link":"https://us02web.zoom.us/j/88536204717?pwd=dW0xRDNsbTZLaTFNUENPTVVjMEVlUT09"
+        },
+        "22:00 - 22:30":{
+            "title":"English",
+            "app":"discord",
+            "link":"https://us02web.zoom.us/j/88536204717?pwd=dW0xRDNsbTZLaTFNUENPTVVjMEVlUT09"
         }
     },
     "Thu":{
-        "07:00 - 08:00":{
-            "title":"Thu",
+        "07:00 - 07:20":{
+            "title":"English",
             "app":"zoom",
-            "link":""
+            "link":"https://us02web.zoom.us/j/88536204717?pwd=dW0xRDNsbTZLaTFNUENPTVVjMEVlUT09"
         },
-        "16:00 - 17:00":{
-            "title":"Farsi",
+        "16:00 - 16:20":{
+            "title":"English",
             "app":"zoom",
-            "link":""
+            "link":"https://us02web.zoom.us/j/88536204717?pwd=dW0xRDNsbTZLaTFNUENPTVVjMEVlUT09"
         },
-        "20:00 - 21:00":{
+        "17:00 - 17:20":{
             "title":"Farsi",
-            "app":"zoom",
-            "link":""
+            "app":"google",
+            "link":"https://meet.google.com/xjn-qrrr-sry"
         },
-        "22:00 - 23:00":{
-            "title":"Farsi",
+        "20:00 - 20:20":{
+            "title":"Spanish",
             "app":"zoom",
-            "link":""
+            "link":"https://us02web.zoom.us/j/88536204717?pwd=dW0xRDNsbTZLaTFNUENPTVVjMEVlUT09"
+        },
+        "21:00 - 21:30":{
+            "title":"English",
+            "app":"zoom",
+            "link":"https://us02web.zoom.us/j/88536204717?pwd=dW0xRDNsbTZLaTFNUENPTVVjMEVlUT09"
+        },
+        "22:00 - 22:30":{
+            "title":"English",
+            "app":"discord",
+            "link":"https://us02web.zoom.us/j/88536204717?pwd=dW0xRDNsbTZLaTFNUENPTVVjMEVlUT09"
         }
     },
     "Fri":{
-        "07:00 - 08:00":{
+        "07:00 - 07:20":{
             "title":"English",
             "app":"zoom",
-            "link":""
+            "link":"https://us02web.zoom.us/j/88536204717?pwd=dW0xRDNsbTZLaTFNUENPTVVjMEVlUT09"
         },
-        "16:00 - 17:00":{
-            "title":"Farsi",
+        "16:00 - 16:20":{
+            "title":"English",
             "app":"zoom",
-            "link":""
+            "link":"https://us02web.zoom.us/j/88536204717?pwd=dW0xRDNsbTZLaTFNUENPTVVjMEVlUT09"
         },
-        "20:00 - 21:00":{
+        "17:00 - 17:20":{
             "title":"Farsi",
-            "app":"zoom",
-            "link":""
+            "app":"google",
+            "link":"https://meet.google.com/xjn-qrrr-sry"
         },
-        "22:00 - 23:00":{
-            "title":"Farsi",
+        "20:00 - 20:20":{
+            "title":"Spanish",
             "app":"zoom",
-            "link":""
+            "link":"https://us02web.zoom.us/j/88536204717?pwd=dW0xRDNsbTZLaTFNUENPTVVjMEVlUT09"
+        },
+        "21:00 - 21:30":{
+            "title":"English",
+            "app":"zoom",
+            "link":"https://us02web.zoom.us/j/88536204717?pwd=dW0xRDNsbTZLaTFNUENPTVVjMEVlUT09"
+        },
+        "22:00 - 22:30":{
+            "title":"English",
+            "app":"discord",
+            "link":"https://us02web.zoom.us/j/88536204717?pwd=dW0xRDNsbTZLaTFNUENPTVVjMEVlUT09"
         }
     },
     "Sat":{
-        "07:00 - 08:00":{
+        "07:00 - 07:20":{
             "title":"English",
             "app":"zoom",
-            "link":""
+            "link":"https://us02web.zoom.us/j/88536204717?pwd=dW0xRDNsbTZLaTFNUENPTVVjMEVlUT09"
         },
-        "16:00 - 17:00":{
-            "title":"Farsi",
+        "16:00 - 16:20":{
+            "title":"English",
             "app":"zoom",
-            "link":""
+            "link":"https://us02web.zoom.us/j/88536204717?pwd=dW0xRDNsbTZLaTFNUENPTVVjMEVlUT09"
         },
-        "20:00 - 21:00":{
+        "17:00 - 17:20":{
             "title":"Farsi",
-            "app":"zoom",
-            "link":""
+            "app":"google",
+            "link":"https://meet.google.com/xjn-qrrr-sry"
         },
-        "22:00 - 23:00":{
-            "title":"Farsi",
+        "20:00 - 20:20":{
+            "title":"Spanish",
             "app":"zoom",
-            "link":""
+            "link":"https://us02web.zoom.us/j/88536204717?pwd=dW0xRDNsbTZLaTFNUENPTVVjMEVlUT09"
+        },
+        "21:00 - 21:30":{
+            "title":"English",
+            "app":"zoom",
+            "link":"https://us02web.zoom.us/j/88536204717?pwd=dW0xRDNsbTZLaTFNUENPTVVjMEVlUT09"
+        },
+        "22:00 - 22:30":{
+            "title":"English",
+            "app":"discord",
+            "link":"https://us02web.zoom.us/j/88536204717?pwd=dW0xRDNsbTZLaTFNUENPTVVjMEVlUT09"
         }
     },
     "Sun":{
-        "07:00 - 08:00":{
+        "16:00 - 16:20":{
             "title":"English",
             "app":"zoom",
-            "link":""
+            "link":"https://us02web.zoom.us/j/88536204717?pwd=dW0xRDNsbTZLaTFNUENPTVVjMEVlUT09"
         },
-        "16:00 - 17:00":{
+        "17:00 - 17:20":{
             "title":"Farsi",
-            "app":"zoom",
-            "link":""
+            "app":"google",
+            "link":"https://meet.google.com/xjn-qrrr-sry"
         },
-        "20:00 - 21:00":{
-            "title":"Farsi",
+        "21:00 - 21:30":{
+            "title":"English",
             "app":"zoom",
-            "link":""
+            "link":"https://us02web.zoom.us/j/88536204717?pwd=dW0xRDNsbTZLaTFNUENPTVVjMEVlUT09"
         },
-        "22:00 - 23:00":{
-            "title":"Farsi",
-            "app":"zoom",
-            "link":""
+        "22:00 - 22:30":{
+            "title":"English",
+            "app":"discord",
+            "link":"https://us02web.zoom.us/j/88536204717?pwd=dW0xRDNsbTZLaTFNUENPTVVjMEVlUT09"
         }
     }
     

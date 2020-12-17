@@ -150,7 +150,6 @@ export default {
       setEventStatus: false,
       mobileClick: false,
       dialogmsg: "",
-      createEventStatus: "",
     };
   },
   computed: {
@@ -182,20 +181,10 @@ export default {
     },
     initClient(summary, start, end, location) {
       if (this.isAuthenticated()) {
-        this.createEventStatus = this.createEvent(
-          summary,
-          start,
-          end,
-          location
-        );
+        this.createEvent(summary, start, end, location);
       } else {
         this.$login();
-        this.createEventStatus = this.createEvent(
-          summary,
-          start,
-          end,
-          location
-        );
+        this.createEvent(summary, start, end, location);
       }
     },
     addEvent(summary, start, end, location) {
@@ -217,13 +206,6 @@ export default {
         calendarId: "primary",
         resource: event,
       });
-
-      request.execute((response) => {
-        if (response.status === "confirmed") {
-          this.dialog = true;
-          this.dialogmsg = "Event added to your calendar successfully!";
-        }
-      });
       this.gapi.load("client", {
         onerror: function () {
           // Handle loading error.
@@ -236,6 +218,12 @@ export default {
           this.dialog = true;
           this.dialogmsg = "Timeout error!";
         },
+      });
+      request.execute((response) => {
+        if (response.status === "confirmed") {
+          this.dialog = true;
+          this.dialogmsg = "Event added to your calendar successfully!";
+        }
       });
     },
   },

@@ -128,17 +128,13 @@
             <span>Times are in</span>
           </v-col>
           <v-col align-self="center" cols="8" md="4">
-            <v-select
+            <v-autocomplete
               color="red--text"
               v-model="timeZoneSelect"
-              :hint="`${timeZoneSelect.value}, ${timeZoneSelect.abbr}`"
-              item-text="text"
-              item-value="abbr"
               :items="listTimeZone"
               label="select timezone"
-              persistent-hint
-              return-object
-            ></v-select>
+            ></v-autocomplete>
+            <p class="text-caption">Current time: {{ clock }}</p>
           </v-col>
           <v-col
             offset-md="1"
@@ -281,7 +277,7 @@
                   :time="i"
                   :date="weekDate[0]"
                   :year="weekPeriodString"
-                  :timeZone="timeZoneSelect.utc[0]"
+                  :timeZone="timeZoneSelect"
                 ></MeetingCard>
               </v-col>
               <v-col cols="1">
@@ -294,7 +290,7 @@
                   :time="i"
                   :date="weekDate[1]"
                   :year="weekPeriodString"
-                  :timeZone="timeZoneSelect.utc[0]"
+                  :timeZone="timeZoneSelect"
                 ></MeetingCard>
               </v-col>
               <v-col cols="1">
@@ -307,7 +303,7 @@
                   :time="i"
                   :date="weekDate[2]"
                   :year="weekPeriodString"
-                  :timeZone="timeZoneSelect.utc[0]"
+                  :timeZone="timeZoneSelect"
                 ></MeetingCard>
               </v-col>
               <v-col cols="1">
@@ -320,7 +316,7 @@
                   :time="i"
                   :date="weekDate[3]"
                   :year="weekPeriodString"
-                  :timeZone="timeZoneSelect.utc[0]"
+                  :timeZone="timeZoneSelect"
                 ></MeetingCard>
               </v-col>
               <v-col cols="1">
@@ -333,7 +329,7 @@
                   :time="i"
                   :date="weekDate[4]"
                   :year="weekPeriodString"
-                  :timeZone="timeZoneSelect.utc[0]"
+                  :timeZone="timeZoneSelect"
                 ></MeetingCard>
               </v-col>
               <v-col cols="1">
@@ -346,7 +342,7 @@
                   :time="i"
                   :date="weekDate[5]"
                   :year="weekPeriodString"
-                  :timeZone="timeZoneSelect.utc[0]"
+                  :timeZone="timeZoneSelect"
                 ></MeetingCard>
               </v-col>
               <v-col cols="1">
@@ -359,7 +355,7 @@
                   :time="i"
                   :date="weekDate[6]"
                   :year="weekPeriodString"
-                  :timeZone="timeZoneSelect.utc[0]"
+                  :timeZone="timeZoneSelect"
                 ></MeetingCard>
               </v-col>
             </v-row>
@@ -393,7 +389,7 @@
                   :time="i"
                   :date="weekDate[0]"
                   :year="weekPeriodString"
-                  :timeZone="timeZoneSelect.utc[0]"
+                  :timeZone="timeZoneSelect"
                 ></MeetingCard>
               </v-col>
               <v-col cols="1">
@@ -406,7 +402,7 @@
                   :time="i"
                   :date="weekDate[1]"
                   :year="weekPeriodString"
-                  :timeZone="timeZoneSelect.utc[0]"
+                  :timeZone="timeZoneSelect"
                 ></MeetingCard>
               </v-col>
               <v-col cols="1">
@@ -419,7 +415,7 @@
                   :time="i"
                   :date="weekDate[2]"
                   :year="weekPeriodString"
-                  :timeZone="timeZoneSelect.utc[0]"
+                  :timeZone="timeZoneSelect"
                 ></MeetingCard>
               </v-col>
               <v-col cols="1">
@@ -432,7 +428,7 @@
                   :time="i"
                   :date="weekDate[3]"
                   :year="weekPeriodString"
-                  :timeZone="timeZoneSelect.utc[0]"
+                  :timeZone="timeZoneSelect"
                 ></MeetingCard>
               </v-col>
               <v-col cols="1">
@@ -445,7 +441,7 @@
                   :time="i"
                   :date="weekDate[4]"
                   :year="weekPeriodString"
-                  :timeZone="timeZoneSelect.utc[0]"
+                  :timeZone="timeZoneSelect"
                 ></MeetingCard>
               </v-col>
               <v-col cols="1">
@@ -458,7 +454,7 @@
                   :time="i"
                   :date="weekDate[5]"
                   :year="weekPeriodString"
-                  :timeZone="timeZoneSelect.utc[0]"
+                  :timeZone="timeZoneSelect"
                 ></MeetingCard>
               </v-col>
               <v-col cols="1">
@@ -471,7 +467,7 @@
                   :time="i"
                   :date="weekDate[6]"
                   :year="weekPeriodString"
-                  :timeZone="timeZoneSelect.utc[0]"
+                  :timeZone="timeZoneSelect"
                 ></MeetingCard>
               </v-col>
             </v-row>
@@ -542,7 +538,7 @@
               :time="i"
               :date="weekDate[mobileDay]"
               :year="weekPeriodString"
-              :timeZone="timeZoneSelect.utc[0]"
+              :timeZone="timeZoneSelect"
             ></MeetingCard>
           </v-col>
           <v-col cols="4" class="px-1">
@@ -555,7 +551,7 @@
               :time="i"
               :date="weekDate[mobileDay + 1]"
               :year="weekPeriodString"
-              :timeZone="timeZoneSelect.utc[0]"
+              :timeZone="timeZoneSelect"
             ></MeetingCard>
           </v-col>
         </v-row>
@@ -596,7 +592,7 @@
               :time="i"
               :date="weekDate[mobileDay]"
               :year="weekPeriodString"
-              :timeZone="timeZoneSelect.utc[0]"
+              :timeZone="timeZoneSelect"
             ></MeetingCard>
           </v-col>
           <v-col cols="4" class="px-1">
@@ -615,7 +611,7 @@
               :time="i"
               :date="weekDate[mobileDay + 1]"
               :year="weekPeriodString"
-              :timeZone="timeZoneSelect.utc[0]"
+              :timeZone="timeZoneSelect"
             ></MeetingCard>
           </v-col>
         </v-row>
@@ -652,9 +648,7 @@
  
 <script>
 import MeetingCard from "./components/MeetingCard";
-import timezones from "./static/timezones.json";
-// import specialMeet from "../public/specialMeeting.json";
-// import weeklyBase from "../public/weeklyBase.json";
+import moment from "moment-timezone";
 import axios from "axios";
 
 function dayNumber(day) {
@@ -782,36 +776,21 @@ function convertToLocal(meet, timezone, year = -1, month = -1, date = -1) {
     date = sourceDate.getDate();
   }
 
-  var newDate = new Date(
-    month + "/" + date + "/" + year + " " + hour + ":" + minutes + " UTC"
-  );
-  newDate.setMinutes(newDate.getMinutes() + newDate.getTimezoneOffset() + timezone.offset * 60); //to timezone time
-  meet.numDay = newDate.getDay();
+  let newDate = moment
+    .utc(year + "-" + month + "-" + date + " " + hour + ":" + minutes)
+    .tz(timezone);
+  meet.numDay = new Date(newDate.format()).getDay();
   meet.day = numToDay[meet.numDay];
+  meet.startTime = newDate.format("HH:mm");
 
-  meet.startTime =
-    (newDate.getHours().toString().length === 2
-      ? newDate.getHours()
-      : "0" + newDate.getHours()) +
-    ":" +
-    (newDate.getMinutes().toString().length === 2
-      ? newDate.getMinutes()
-      : "0" + newDate.getMinutes());
   hour = meet.endTime.split(":");
   minutes = hour[1];
   hour = hour[0];
-  newDate = new Date(
-    month + "/" + date + "/" + year + " " + hour + ":" + minutes + " UTC"
-  );
-  newDate.setMinutes(newDate.getMinutes() + newDate.getTimezoneOffset() + timezone.offset * 60); //to timezone time
-  meet.endTime =
-    (newDate.getHours().toString().length === 2
-      ? newDate.getHours()
-      : "0" + newDate.getHours()) +
-    ":" +
-    (newDate.getMinutes().toString().length === 2
-      ? newDate.getMinutes()
-      : "0" + newDate.getMinutes());
+
+  newDate = moment
+    .utc(year + "-" + month + "-" + date + " " + hour + ":" + minutes)
+    .tz(timezone);
+  meet.endTime = newDate.format("HH:mm");
   return meet;
 }
 function setFirstDayOfWeek(numDay) {
@@ -830,7 +809,7 @@ export default {
     return {
       dayOfWeek: 0,
       listTimeZone: [],
-      timeZoneSelect: {},
+      timeZoneSelect: "",
       meetingtimelist: [],
       meetingSpecial: [],
       meetingiemelistlenght: 10,
@@ -842,9 +821,14 @@ export default {
       mobileDay: 0,
       dataNumToMonth: mobileNumToDay,
       weekPeriodString: "",
+      clock: "",
     };
   },
   methods: {
+    updateDateTime() {
+      this.clock = moment.tz(this.timeZoneSelect).format("HH:mm:ss");
+      this.$options.timer = window.setTimeout(this.updateDateTime, 1000);
+    },
     sortOnKeys(dict) {
       var sorted = [];
       for (var key in dict) {
@@ -894,7 +878,9 @@ export default {
       if (day < this.dayOfWeek) {
         return "lastday_card";
       }
-      var newDate = new Date();
+      let format = moment.tz(this.timeZoneSelect).format();
+      var newDate = new Date(format.substring(0, 19));
+
       time = time.split("- ")[0];
       if (time.split(":")[0] < newDate.getHours()) {
         return "lastday_card";
@@ -915,22 +901,19 @@ export default {
     },
   },
   created: function () {
-    this.listTimeZone = timezones;
-
-    var offset = new Date().toString();
-    offset = String(String(offset).split("(")[1]).split(")")[0];
-    for (const index in timezones) {
-      if (timezones[index].value === offset) {
-        this.timeZoneSelect = timezones[index];
-      }
-    }
-    this.dayOfWeek = new Date().getDay() - 1;
+    this.listTimeZone = moment.tz.names();
+    this.timeZoneSelect = moment.tz.guess();
+  },
+  watch: {
+    timeZoneSelect() {
+      let format = moment.tz(this.timeZoneSelect).format();
+      this.dayOfWeek = new Date(format.split("T")[0]).getDay() - 1;
     if (this.dayOfWeek < 0) {
       this.dayOfWeek = 6;
     }
     this.mobileDay = this.dayOfWeek;
 
-    var nowTime = new Date();
+      var nowTime = new Date(format);
     nowTime.setDate(
       nowTime.getDate() - (nowTime.getDay() > 0 ? nowTime.getDay() - 1 : 6)
     );
@@ -940,7 +923,7 @@ export default {
       nowTime.getDate(),
       nowTime.getFullYear()
     );
-    var endDayOfThisWeek = new Date();
+      var endDayOfThisWeek = new Date(format);
     endDayOfThisWeek.setDate(nowTime.getDate() + 7);
     this.weekPeriodString =
       numToMonth[nowTime.getMonth()] +
@@ -952,9 +935,7 @@ export default {
       endDayOfThisWeek.getDate() +
       "," +
       nowTime.getFullYear();
-  },
-  watch: {
-    timeZoneSelect() {
+
       axios.get("./weeklyBase.json").then((response) => {
         this.meetingtimelist = this.sortOnKeys(
           objectification(response.data, this.timeZoneSelect)
@@ -994,6 +975,9 @@ export default {
         nowTime.getFullYear()
       );
     },
+  },
+  mounted() {
+    this.$options.timer = window.setTimeout(this.updateDateTime, 1000);
   },
 };
 </script>
