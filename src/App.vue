@@ -796,7 +796,6 @@ function convertToLocal(meet, timezone, year = -1, month = -1, date = -1) {
 function setFirstDayOfWeek(numDay) {
   var date = new Date();
   date.setDate(date.getDate() - date.getDay() + numDay);
-
   return date;
 }
 
@@ -907,34 +906,33 @@ export default {
   watch: {
     timeZoneSelect() {
       let format = moment.tz(this.timeZoneSelect).format();
-      this.dayOfWeek = new Date(format.split("T")[0]).getDay() - 1;
-    if (this.dayOfWeek < 0) {
-      this.dayOfWeek = 6;
-    }
-    this.mobileDay = this.dayOfWeek;
+      this.dayOfWeek = new Date(format.substring(0, 19)).getDay() - 1;
+      if (this.dayOfWeek < 0) {
+        this.dayOfWeek = 6;
+      }
+      this.mobileDay = this.dayOfWeek;
+      var nowTime = new Date(format.substring(0, 19));
+      nowTime.setDate(
+        nowTime.getDate() - (nowTime.getDay() > 0 ? nowTime.getDay() - 1 : 6)
+      );
 
-      var nowTime = new Date(format);
-    nowTime.setDate(
-      nowTime.getDate() - (nowTime.getDay() > 0 ? nowTime.getDay() - 1 : 6)
-    );
-
-    this.weekDate = sevenDayOfMonth(
-      numToMonth[nowTime.getMonth()],
-      nowTime.getDate(),
-      nowTime.getFullYear()
-    );
-      var endDayOfThisWeek = new Date(format);
-    endDayOfThisWeek.setDate(nowTime.getDate() + 7);
-    this.weekPeriodString =
-      numToMonth[nowTime.getMonth()] +
-      " " +
-      nowTime.getDate() +
-      " - " +
-      numToMonth[endDayOfThisWeek.getMonth()] +
-      " " +
-      endDayOfThisWeek.getDate() +
-      "," +
-      nowTime.getFullYear();
+      this.weekDate = sevenDayOfMonth(
+        numToMonth[nowTime.getMonth()],
+        nowTime.getDate(),
+        nowTime.getFullYear()
+      );
+      var endDayOfThisWeek = new Date(format.substring(0, 19));
+      endDayOfThisWeek.setDate(nowTime.getDate() + 7);
+      this.weekPeriodString =
+        numToMonth[nowTime.getMonth()] +
+        " " +
+        nowTime.getDate() +
+        " - " +
+        numToMonth[endDayOfThisWeek.getMonth()] +
+        " " +
+        endDayOfThisWeek.getDate() +
+        "," +
+        nowTime.getFullYear();
 
       axios.get("./weeklyBase.json").then((response) => {
         this.meetingtimelist = this.sortOnKeys(
@@ -951,12 +949,13 @@ export default {
       this.drawer = false;
     },
     showThisWeek: function () {
-      var nowTime = new Date();
+      let format = moment.tz(this.timeZoneSelect).format();
+      var nowTime = new Date(format.substring(0, 19));
       nowTime.setDate(
         nowTime.getDate() - (nowTime.getDay() > 0 ? nowTime.getDay() - 1 : 6)
       );
       nowTime.setDate(nowTime.getDate() + 7 * this.showThisWeek);
-      var endDayOfThisWeek = new Date();
+      var endDayOfThisWeek = new Date(format.substring(0, 19));
       endDayOfThisWeek.setDate(nowTime.getDate() + 7);
       this.weekPeriodString =
         numToMonth[nowTime.getMonth()] +
