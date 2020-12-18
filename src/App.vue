@@ -770,7 +770,7 @@ function convertToLocal(meet, timezone, year = -1, month = -1, date = -1) {
   var minutes = hour[1];
   hour = hour[0];
   if (year === -1) {
-    var sourceDate = setFirstDayOfWeek(meet.numDay);
+    var sourceDate = setFirstDayOfWeek(meet.numDay, timezone);
     month = sourceDate.getMonth() + 1;
     year = sourceDate.getFullYear();
     date = sourceDate.getDate();
@@ -779,7 +779,7 @@ function convertToLocal(meet, timezone, year = -1, month = -1, date = -1) {
   let newDate = moment
     .utc(year + "-" + month + "-" + date + " " + hour + ":" + minutes)
     .tz(timezone);
-  meet.numDay = new Date(newDate.format()).getDay();
+  meet.numDay = new Date(newDate.format().substring(0, 19)).getDay();
   meet.day = numToDay[meet.numDay];
   meet.startTime = newDate.format("HH:mm");
 
@@ -793,10 +793,11 @@ function convertToLocal(meet, timezone, year = -1, month = -1, date = -1) {
   meet.endTime = newDate.format("HH:mm");
   return meet;
 }
-function setFirstDayOfWeek(numDay) {
-  var date = new Date();
-  date.setDate(date.getDate() - date.getDay() + numDay);
-  return date;
+function setFirstDayOfWeek(numDay, timezone) {
+  let format = moment.tz(timezone).format();
+  var newDate = new Date(format.substring(0, 19));
+  newDate.setDate(newDate.getDate() - newDate.getDay() + numDay);
+  return newDate;
 }
 
 export default {
