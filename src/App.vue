@@ -744,7 +744,6 @@ function objectification(json, timezone) {
       temp.app = json[day][time].app;
       temp.link = json[day][time].link;
       temp = convertToLocal(temp, timezone);
-
       if (typeof meets[temp.startTime + "- " + temp.endTime] === "undefined") {
         let dayObject = {};
         dayObject.title = temp.title;
@@ -776,19 +775,19 @@ function convertToLocal(meet, timezone, year = -1, month = -1, date = -1) {
     date = sourceDate.getDate();
   }
 
+  function pad(n){return n<10 ? '0'+n : n}
   let newDate = moment
-    .utc(year + "-" + month + "-" + date + " " + hour + ":" + minutes)
+    .utc(year + "-" + pad(month) + "-" + pad(date) + " " + hour + ":" + minutes)
     .tz(timezone);
   meet.numDay = new Date(newDate.format().substring(0, 19)).getDay();
   meet.day = numToDay[meet.numDay];
   meet.startTime = newDate.format("HH:mm");
-
   hour = meet.endTime.split(":");
   minutes = hour[1];
   hour = hour[0];
 
   newDate = moment
-    .utc(year + "-" + month + "-" + date + " " + hour + ":" + minutes)
+    .utc(year + "-" + pad(month) + "-" + pad(date) + " " + hour + ":" + minutes)
     .tz(timezone);
   meet.endTime = newDate.format("HH:mm");
   return meet;
