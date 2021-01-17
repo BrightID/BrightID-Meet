@@ -1,13 +1,13 @@
 <template>
   <v-app>
-    <v-app-bar app class="hidden-sm-and-down" color="black" dark>
+    <v-app-bar app class="hidden-sm-and-down navigation">
       <div class="d-flex align-center">
         <a href="https://brightid.org">
           <v-img
             alt="Vuetify Logo"
             class="shrink mr-2"
             contain
-            src="https://uploads-ssl.webflow.com/5e54622b3f6e65be8baf0653/5e57958e0eb38846a2658298_brightid-reversed.svg"
+            src="https://miro.medium.com/max/1200/1*FteDjn3xH6NEQj6lTw1tow.png"
             transition="scale-transition"
             width="150"
           />
@@ -15,26 +15,32 @@
       </div>
       <v-spacer></v-spacer>
       <div class="hidden-sm-and-down">
-        <a href="https://brightid.gitbook.io/" class="mx-6">Tutorial</a>
-        <a href="https://www.brightid.org/meet" class="mx-6"
-          >Connection Parties</a
+        <a href="https://brightid.org/about-us" class="mx-6 black--text"
+          >About Us</a
         >
-        <a href="https://www.brightid.org/#use-in-your-project" class="mx-6"
-          >Use in your Project</a
+        <a
+          href="https://brightid.org/homepage-with-grid#getStarted"
+          class="mx-6 black--text"
+          >Download</a
         >
-        <a href="https://www.brightid.org/#team" class="mx-6">Team</a>
+
+        <a href="https://medium.com/brightid" class="mx-6 black--text">Blog</a>
+        <a
+          href="https://www.bonfire.com/store/brightid-swag/"
+          class="mx-6 black--text"
+          >Store</a
+        >
       </div>
-      <v-spacer></v-spacer>
 
       <v-btn
+        color="black"
         class="hidden-sm-and-down"
-        color="primary"
-        dark
-        href="https://www.brightid.org/#get-started"
+        href="https://www.brightid.org/contact-us-form"
         target="_blank"
+        outlined
         rounded
       >
-        <span class="mr-2">GET STARTED</span>
+        <span class="mr-2">Contact Us</span>
       </v-btn>
     </v-app-bar>
     <v-app-bar app dark color="black darken-3" class="hidden-md-and-up">
@@ -105,13 +111,13 @@
     <v-main class="pt-md-15 pt-0">
       <v-row class="header">
         <v-col align-self="center" cols="5" offset="1"
-          ><h1 class="white--text text-md-h3 text-h5 font-weight-bold">
+          ><h1 class="text-md-h3 text-h5 font-weight-bold">
             BrightID <br />
             Connection Parties
           </h1></v-col
         >
         <v-col cols="5" align-self="center">
-          <v-img src="./assets/Neurons.png" contain height="300"></v-img>
+          <v-img src="./assets/Group 25.png" contain height="300"></v-img>
         </v-col>
       </v-row>
 
@@ -1004,8 +1010,13 @@ export default {
   color: #ed7a5d;
 }
 
+.navigation {
+  background-color: white !important;
+  box-shadow: none !important;
+}
+
 .header {
-  background-color: black;
+  background-image: url("./assets/Network illustration.png");
   height: 400px;
 }
 .theme--light.v-input input,
