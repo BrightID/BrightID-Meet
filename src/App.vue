@@ -622,19 +622,17 @@
           </v-col>
         </v-row>
       </v-container>
-      <v-footer height="100px" color="black" class="px-10 footerstyle">
-        <h5 class="text-body-1 white--text mr-1">COPYRIGHT ©</h5>
+      <v-footer height="150px" color="secondary" class="px-10 footerstyle">
+        <h5 class="text-caption-1 mr-1">COPYRIGHT ©</h5>
         <a
-          class="text-body-1"
+          class="text-caption-1 black--text"
           href="https://github.com/BrightID/BrightID-Constitution"
           >BrightID Main LLC</a
         >
         <v-spacer></v-spacer>
-        <a href="https://www.brightid.org/privacy-policy-terms-of-use"
-          >Privacy Policy - Terms of Use</a
-        >
-        <v-spacer></v-spacer>
-        <a href="https://twitter.com/BrightIDProject">
+        <h5 class="text-h5 black--text">Join the BrightID community</h5>
+
+        <a href="https://twitter.com/BrightIDProject" class="ml-2">
           <v-icon dark>mdi-twitter</v-icon>
         </a>
         <a href="https://medium.com/brightid">
@@ -646,7 +644,10 @@
         <a href="https://discord.gg/nTtuB2M" class="mr-2">
           <v-icon dark>mdi-discord</v-icon>
         </a>
-        <a href="https://www.brightid.org/whitepaper">white papper</a>
+        <v-spacer></v-spacer>
+        <a href="https://www.brightid.org/whitepaper">Privacy Policy</a>
+        <span class="mx-2">|</span>
+        <a href="https://www.brightid.org/whitepaper">Whitepaper</a>
       </v-footer>
     </v-main>
   </v-app>
@@ -750,6 +751,7 @@ function objectification(json, timezone) {
       temp.app = json[day][time].app;
       temp.link = json[day][time].link;
       temp = convertToLocal(temp, timezone);
+
       if (typeof meets[temp.startTime + "- " + temp.endTime] === "undefined") {
         let dayObject = {};
         dayObject.title = temp.title;
@@ -1054,7 +1056,12 @@ export default {
   position: absolute !important;
   right: 0 !important;
 }
-
+.theme--dark.v-icon {
+  color: black;
+}
+.footerstyle a {
+  color: black;
+}
 .footerstyle a :hover {
   color: #ed7a5d !important;
 }
