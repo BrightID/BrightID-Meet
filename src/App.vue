@@ -15,14 +15,7 @@
       </div>
       <v-spacer></v-spacer>
       <div class="hidden-sm-and-down">
-        <a href="https://brightid.org/about-us" class="mx-6 black--text"
-          >About Us</a
-        >
-        <a
-          href="https://brightid.org/homepage-with-grid#getStarted"
-          class="mx-6 black--text"
-          >Download</a
-        >
+        
 
         <a href="https://medium.com/brightid" class="mx-6 black--text">Blog</a>
         <a
@@ -35,7 +28,7 @@
       <v-btn
         color="black"
         class="hidden-sm-and-down"
-        href="https://www.brightid.org/contact-us-form"
+        href="https://discord.gg/GrqWwbdtSy"
         target="_blank"
         outlined
         rounded
