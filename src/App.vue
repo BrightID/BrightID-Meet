@@ -50,7 +50,7 @@
       ></v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn icon @click.native="dialog = true">
-        <v-icon>mdi-menu</v-icon>
+        <v-icon color="white">mdi-menu</v-icon>
       </v-btn>
       <v-dialog
         v-model="dialog"
@@ -79,22 +79,19 @@
 
           <v-list class="black">
             <v-row justify="center" class="black py-4">
-              <a href="https://brightid.gitbook.io/" class="text-h5"
-                >Tutorial</a
+              <a href="https://medium.com/brightid" class="text-h5">Blog</a>
+            </v-row>
+            <v-row justify="center" class="black py-4">
+              <a
+                href="https://www.bonfire.com/store/brightid-swag/"
+                class="text-h5"
+                >Store</a
               >
             </v-row>
             <v-row justify="center" class="black py-4">
-              <a href="https://brightid.gitbook.io/" class="text-h5"
-                >Connection Parties</a
+              <a href="https://discord.gg/GrqWwbdtSy" class="text-h5"
+                >Contact Us</a
               >
-            </v-row>
-            <v-row justify="center" class="black py-4">
-              <a href="https://brightid.gitbook.io/" class="text-h5"
-                >Use In Your Project</a
-              >
-            </v-row>
-            <v-row justify="center" class="black py-4">
-              <a href="https://brightid.gitbook.io/" class="text-h5">Team</a>
             </v-row>
           </v-list>
         </v-card>
