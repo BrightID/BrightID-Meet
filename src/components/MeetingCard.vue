@@ -9,27 +9,6 @@
       <a class="white--text caption remove_decoration" :href="link"
         >Go to meeting</a
       >
-      <br class="d-md-none" />
-      <a
-        class="white--text caption add_decoration"
-        @click="
-          addEvent(
-            'BrightID meeting:' + title,
-            {
-              dateTime:
-                justYear + '-' + month + '-' + day + 'T' + startTime + ':00',
-              timeZone: timeZone,
-            },
-            {
-              dateTime:
-                justYear + '-' + month + '-' + day + 'T' + endTime + ':00',
-              timeZone: timeZone,
-            },
-            link
-          )
-        "
-        >Add to calendar</a
-      >
     </div>
     <div v-else>
       <a
@@ -71,29 +50,6 @@
         @click="mobileClick = true"
         >via {{ app }}</a
       >
-      <button
-        :disabled="dayStatus === 'lastday_card'"
-        @click="
-          addEvent(
-            'BrightID meeting:' + title,
-            {
-              dateTime:
-                justYear + '-' + month + '-' + day + 'T' + startTime + ':00',
-              timeZone: timeZone,
-            },
-            {
-              dateTime:
-                justYear + '-' + month + '-' + day + 'T' + endTime + ':00',
-              timeZone: timeZone,
-            },
-            link
-          )
-        "
-        class="card_btn white--text d-none d-md-inline"
-        dark
-      >
-        Add to my calendar
-      </button>
     </div>
     <v-dialog v-model="dialog" width="500">
       <v-card>
