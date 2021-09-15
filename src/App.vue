@@ -628,7 +628,7 @@
         <a href="https://medium.com/brightid">
           <v-icon dark>mdi-alpha-m-box</v-icon>
         </a>
-        <a href="https://t.me/brightid">
+        <a href="https://t.me/brightidofficial">
           <v-icon dark>mdi-telegram</v-icon>
         </a>
         <a href="https://discord.gg/nTtuB2M" class="mr-2">
