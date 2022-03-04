@@ -28,7 +28,7 @@
       <v-btn
         color="black"
         class="hidden-sm-and-down"
-        href="https://discord.gg/GrqWwbdtSy"
+        href="https://discord.com/invite/4vn7UqgTa9"
         target="_blank"
         outlined
         rounded
@@ -89,7 +89,7 @@
               >
             </v-row>
             <v-row justify="center" class="black py-4">
-              <a href="https://discord.gg/GrqWwbdtSy" class="text-h5"
+              <a href="https://discord.com/invite/4vn7UqgTa9" class="text-h5"
                 >Contact Us</a
               >
             </v-row>
@@ -631,7 +631,7 @@
         <a href="https://t.me/brightidofficial">
           <v-icon dark>mdi-telegram</v-icon>
         </a>
-        <a href="https://discord.gg/nTtuB2M" class="mr-2">
+        <a href="https://discord.com/invite/4vn7UqgTa9" class="mr-2">
           <v-icon dark>mdi-discord</v-icon>
         </a>
         <v-spacer></v-spacer>
