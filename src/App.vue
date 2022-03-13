@@ -261,7 +261,7 @@
               :key="i"
             >
               <v-col cols="1" align-self="center" class="pr-10">
-                <span class="text-h6 font-weight-black">{{ i }}</span>
+                <span class="text-h6 font-weight-black">{{meetindex.timeDisplay}}</span>
               </v-col>
               <v-col cols="1">
                 <MeetingCard
@@ -704,7 +704,7 @@ function objectificationSpecialTime(json, timezone) {
       json[meet].date
     );
 
-    if (typeof meets[temp.startTime + "- " + temp.endTime] === "undefined") {
+    if (typeof meets[temp.startTime + "-" + temp.endTime] === "undefined") {
       let dayObject = {};
       dayObject.title = temp.title;
       dayObject.app = temp.app;
@@ -713,8 +713,8 @@ function objectificationSpecialTime(json, timezone) {
       dayObject.month = json[meet].month;
       dayObject.year = json[meet].year;
 
-      meets[temp.startTime + "- " + temp.endTime] = {};
-      meets[temp.startTime + "- " + temp.endTime][temp.day] = dayObject;
+      meets[temp.startTime + "-" + temp.endTime] = {};
+      meets[temp.startTime + "-" + temp.endTime][temp.day] = dayObject;
     } else {
       let dayObject = {};
       dayObject.title = temp.title;
@@ -723,7 +723,7 @@ function objectificationSpecialTime(json, timezone) {
       dayObject.date = json[meet].date;
       dayObject.month = json[meet].month;
       dayObject.year = json[meet].year;
-      meets[temp.startTime + "- " + temp.endTime][temp.day] = dayObject;
+      meets[temp.startTime + "-" + temp.endTime][temp.day] = dayObject;
     }
   }
   return meets;
@@ -742,20 +742,33 @@ function objectification(json, timezone) {
       temp.link = json[day][time].link;
       temp = convertToLocal(temp, timezone);
 
-      if (typeof meets[temp.startTime + "- " + temp.endTime] === "undefined") {
+      let temp2 = new Object();
+      temp2.day = day;
+      temp2.numDay = dayNumber(day);
+      temp2.startTime = time.split(" - ")[0];
+      temp2.endTime = time.split(" - ")[1];
+      temp2.title = json[day][time].title;
+      temp2.app = json[day][time].app;
+      temp2.link = json[day][time].link;
+      temp2 = convertToLocalDisplay(temp2, timezone);
+
+
+      if (typeof meets[temp.startTime + "-" + temp.endTime] === "undefined") {
         let dayObject = {};
         dayObject.title = temp.title;
         dayObject.app = temp.app;
         dayObject.link = temp.link;
 
-        meets[temp.startTime + "- " + temp.endTime] = {};
-        meets[temp.startTime + "- " + temp.endTime][temp.day] = dayObject;
+        meets[temp.startTime + "-" + temp.endTime] = {};
+        meets[temp.startTime + "-" + temp.endTime]["timeDisplay"] = temp2.startTime + "‑" + temp2.endTime;
+        meets[temp.startTime + "-" + temp.endTime][temp.day] = dayObject;
       } else {
         let dayObject = {};
         dayObject.title = temp.title;
         dayObject.app = temp.app;
         dayObject.link = temp.link;
-        meets[temp.startTime + "- " + temp.endTime][temp.day] = dayObject;
+        meets[temp.startTime + "-" + temp.endTime]["timeDisplay"] = temp2.startTime + "‑" + temp2.endTime;
+        meets[temp.startTime + "-" + temp.endTime][temp.day] = dayObject;
       }
     }
   }
@@ -790,6 +803,36 @@ function convertToLocal(meet, timezone, year = -1, month = -1, date = -1) {
   meet.endTime = newDate.format("HH:mm");
   return meet;
 }
+
+function convertToLocalDisplay(meet, timezone, year = -1, month = -1, date = -1) {
+  var hour = meet.startTime.split(":");
+  var minutes = hour[1];
+  hour = hour[0];
+  if (year === -1) {
+    var sourceDate = setFirstDayOfWeek(meet.numDay, timezone);
+    month = sourceDate.getMonth() + 1;
+    year = sourceDate.getFullYear();
+    date = sourceDate.getDate();
+  }
+
+  function pad(n){return n<10 ? '0'+n : n}
+  let newDate = moment
+    .utc(year + "-" + pad(month) + "-" + pad(date) + " " + hour + ":" + minutes)
+    .tz(timezone);
+  meet.numDay = new Date(newDate.format().substring(0, 19)).getDay();
+  meet.day = numToDay[meet.numDay];
+  meet.startTime = newDate.format("h:ma");
+  hour = meet.endTime.split(":");
+  minutes = hour[1];
+  hour = hour[0];
+
+  newDate = moment
+    .utc(year + "-" + pad(month) + "-" + pad(date) + " " + hour + ":" + minutes)
+    .tz(timezone);
+  meet.endTime = newDate.format("h:ma");
+  return meet;
+}
+
 function setFirstDayOfWeek(numDay, timezone) {
   let format = moment.tz(timezone).format();
   var newDate = new Date(format.substring(0, 19));
@@ -823,7 +866,7 @@ export default {
   },
   methods: {
     updateDateTime() {
-      this.clock = moment.tz(this.timeZoneSelect).format("HH:mm:ss");
+      this.clock = moment.tz(this.timeZoneSelect).format("hh:mm:ss a");
       this.$options.timer = window.setTimeout(this.updateDateTime, 1000);
     },
     sortOnKeys(dict) {
