@@ -15,8 +15,6 @@
       </div>
       <v-spacer></v-spacer>
       <div class="hidden-sm-and-down">
-        
-
         <a href="https://medium.com/brightid" class="mx-6 black--text">Blog</a>
         <a
           href="https://www.bonfire.com/store/brightid-swag/"
@@ -261,7 +259,9 @@
               :key="i"
             >
               <v-col cols="1" align-self="center" class="pr-10">
-                <span class="text-h6 font-weight-black">{{meetindex.timeDisplay}}</span>
+                <span class="text-h6 font-weight-black">{{
+                  meetindex.timeDisplay
+                }}</span>
               </v-col>
               <v-col cols="1">
                 <MeetingCard
@@ -364,12 +364,12 @@
                 <span
                   v-if="
                     specialToday(meetindex.Mon, weekDate[0]) ||
-                    specialToday(meetindex.Tue, weekDate[1]) ||
-                    specialToday(meetindex.Wed, weekDate[2]) ||
-                    specialToday(meetindex.Thu, weekDate[3]) ||
-                    specialToday(meetindex.Fri, weekDate[4]) ||
-                    specialToday(meetindex.Sat, weekDate[5]) ||
-                    specialToday(meetindex.Sun, weekDate[6])
+                      specialToday(meetindex.Tue, weekDate[1]) ||
+                      specialToday(meetindex.Wed, weekDate[2]) ||
+                      specialToday(meetindex.Thu, weekDate[3]) ||
+                      specialToday(meetindex.Fri, weekDate[4]) ||
+                      specialToday(meetindex.Sat, weekDate[5]) ||
+                      specialToday(meetindex.Sun, weekDate[6])
                   "
                   class="text-h6 font-weight-black"
                   >{{ i }}</span
@@ -522,7 +522,9 @@
           :key="i"
         >
           <v-col cols="2" align-self="center">
-            <span class="text-caption font-weight-black">{{meetindex.timeDisplay}}</span>
+            <span class="text-caption font-weight-black">{{
+              meetindex.timeDisplay
+            }}</span>
           </v-col>
           <v-col cols="4" offset="1" class="px-1">
             <MeetingCard
@@ -563,10 +565,10 @@
                   meetindex[dataNumToMonth[mobileDay]],
                   weekDate[mobileDay]
                 ) ||
-                specialToday(
-                  meetindex[dataNumToMonth[mobileDay + 1]],
-                  weekDate[mobileDay + 1]
-                )
+                  specialToday(
+                    meetindex[dataNumToMonth[mobileDay + 1]],
+                    weekDate[mobileDay + 1]
+                  )
               "
               class="text-caption font-weight-black"
               >{{ i }}</span
@@ -576,10 +578,10 @@
             <MeetingCard
               v-if="
                 meetindex[dataNumToMonth[mobileDay]] != undefined &&
-                specialToday(
-                  meetindex[dataNumToMonth[mobileDay]],
-                  weekDate[mobileDay]
-                )
+                  specialToday(
+                    meetindex[dataNumToMonth[mobileDay]],
+                    weekDate[mobileDay]
+                  )
               "
               :title="meetindex[dataNumToMonth[mobileDay]].title"
               :app="meetindex[dataNumToMonth[mobileDay]].app"
@@ -595,10 +597,10 @@
             <MeetingCard
               v-if="
                 meetindex[dataNumToMonth[mobileDay + 1]] != undefined &&
-                specialToday(
-                  meetindex[dataNumToMonth[mobileDay + 1]],
-                  weekDate[mobileDay + 1]
-                )
+                  specialToday(
+                    meetindex[dataNumToMonth[mobileDay + 1]],
+                    weekDate[mobileDay + 1]
+                  )
               "
               :title="meetindex[dataNumToMonth[mobileDay + 1]].title"
               :app="meetindex[dataNumToMonth[mobileDay + 1]].app"
@@ -642,7 +644,7 @@
     </v-main>
   </v-app>
 </template>
- 
+
 <script>
 import MeetingCard from "./components/MeetingCard";
 import moment from "moment-timezone";
@@ -713,8 +715,8 @@ function objectificationSpecialTime(json, timezone) {
       dayObject.month = json[meet].month;
       dayObject.year = json[meet].year;
 
-      meets[temp.startTime + "-" + temp.endTime] = {};
-      meets[temp.startTime + "-" + temp.endTime][temp.day] = dayObject;
+      meets[temp.startTime + "- " + temp.endTime] = {};
+      meets[temp.startTime + "- " + temp.endTime][temp.day] = dayObject;
     } else {
       let dayObject = {};
       dayObject.title = temp.title;
@@ -723,7 +725,7 @@ function objectificationSpecialTime(json, timezone) {
       dayObject.date = json[meet].date;
       dayObject.month = json[meet].month;
       dayObject.year = json[meet].year;
-      meets[temp.startTime + "-" + temp.endTime][temp.day] = dayObject;
+      meets[temp.startTime + "- " + temp.endTime][temp.day] = dayObject;
     }
   }
   return meets;
@@ -752,7 +754,6 @@ function objectification(json, timezone) {
       temp2.link = json[day][time].link;
       temp2 = convertToLocalDisplay(temp2, timezone);
 
-
       if (typeof meets[temp.startTime + "-" + temp.endTime] === "undefined") {
         let dayObject = {};
         dayObject.title = temp.title;
@@ -760,14 +761,16 @@ function objectification(json, timezone) {
         dayObject.link = temp.link;
 
         meets[temp.startTime + "-" + temp.endTime] = {};
-        meets[temp.startTime + "-" + temp.endTime]["timeDisplay"] = temp2.startTime + "‑" + temp2.endTime;
+        meets[temp.startTime + "-" + temp.endTime]["timeDisplay"] =
+          temp2.startTime + "‑ " + temp2.endTime;
         meets[temp.startTime + "-" + temp.endTime][temp.day] = dayObject;
       } else {
         let dayObject = {};
         dayObject.title = temp.title;
         dayObject.app = temp.app;
         dayObject.link = temp.link;
-        meets[temp.startTime + "-" + temp.endTime]["timeDisplay"] = temp2.startTime + "‑" + temp2.endTime;
+        meets[temp.startTime + "-" + temp.endTime]["timeDisplay"] =
+          temp2.startTime + "‑ " + temp2.endTime;
         meets[temp.startTime + "-" + temp.endTime][temp.day] = dayObject;
       }
     }
@@ -786,7 +789,9 @@ function convertToLocal(meet, timezone, year = -1, month = -1, date = -1) {
     date = sourceDate.getDate();
   }
 
-  function pad(n){return n<10 ? '0'+n : n}
+  function pad(n) {
+    return n < 10 ? "0" + n : n;
+  }
   let newDate = moment
     .utc(year + "-" + pad(month) + "-" + pad(date) + " " + hour + ":" + minutes)
     .tz(timezone);
@@ -804,7 +809,13 @@ function convertToLocal(meet, timezone, year = -1, month = -1, date = -1) {
   return meet;
 }
 
-function convertToLocalDisplay(meet, timezone, year = -1, month = -1, date = -1) {
+function convertToLocalDisplay(
+  meet,
+  timezone,
+  year = -1,
+  month = -1,
+  date = -1
+) {
   var hour = meet.startTime.split(":");
   var minutes = hour[1];
   hour = hour[0];
@@ -815,7 +826,9 @@ function convertToLocalDisplay(meet, timezone, year = -1, month = -1, date = -1)
     date = sourceDate.getDate();
   }
 
-  function pad(n){return n<10 ? '0'+n : n}
+  function pad(n) {
+    return n < 10 ? "0" + n : n;
+  }
   let newDate = moment
     .utc(year + "-" + pad(month) + "-" + pad(date) + " " + hour + ":" + minutes)
     .tz(timezone);
@@ -889,29 +902,29 @@ export default {
       }
       return numToMonth[meet.month - 1] + " " + meet.date === str;
     },
-    nextMobileDay: function () {
+    nextMobileDay: function() {
       this.mobileDay++;
       if (this.mobileDay > 6) {
         this.mobileDay = 0;
       }
     },
-    previousMobileDay: function () {
+    previousMobileDay: function() {
       this.mobileDay--;
       if (this.mobileDay < 0) {
         this.mobileDay = 6;
       }
     },
-    nextWeek: function () {
+    nextWeek: function() {
       if (this.showThisWeek < this.meetingiemelistlenght - 1) {
         this.showThisWeek++;
       }
     },
-    pervWeek: function () {
+    pervWeek: function() {
       if (this.showThisWeek > 0) {
         this.showThisWeek--;
       }
     },
-    dayStatus: function (day, time) {
+    dayStatus: function(day, time) {
       if (day > this.dayOfWeek || this.showThisWeek > 0) {
         return "tomarow_card";
       }
@@ -927,7 +940,7 @@ export default {
       }
       return "today_card";
     },
-    getDayFromMeet: function (day) {
+    getDayFromMeet: function(day) {
       var meetObject;
       var x = new Date(day);
       x.toString().split(" ");
@@ -940,7 +953,7 @@ export default {
       return meetObject;
     },
   },
-  created: function () {
+  created: function() {
     this.listTimeZone = moment.tz.names();
     this.timeZoneSelect = moment.tz.guess();
   },
@@ -989,7 +1002,7 @@ export default {
     group() {
       this.drawer = false;
     },
-    showThisWeek: function () {
+    showThisWeek: function() {
       let format = moment.tz(this.timeZoneSelect).format();
       var nowTime = new Date(format.substring(0, 19));
       nowTime.setDate(
