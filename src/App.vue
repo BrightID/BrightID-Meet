@@ -738,6 +738,7 @@ function objectification(json, timezone) {
       temp.day = day;
       temp.numDay = dayNumber(day);
       temp.startTime = time.split(" - ")[0];
+
       temp.endTime = time.split(" - ")[1];
       temp.title = json[day][time].title;
       temp.app = json[day][time].app;
@@ -834,7 +835,7 @@ function convertToLocalDisplay(
     .tz(timezone);
   meet.numDay = new Date(newDate.format().substring(0, 19)).getDay();
   meet.day = numToDay[meet.numDay];
-  meet.startTime = newDate.format("h:ma");
+  meet.startTime = newDate.format("hh:mma");
   hour = meet.endTime.split(":");
   minutes = hour[1];
   hour = hour[0];
@@ -842,7 +843,7 @@ function convertToLocalDisplay(
   newDate = moment
     .utc(year + "-" + pad(month) + "-" + pad(date) + " " + hour + ":" + minutes)
     .tz(timezone);
-  meet.endTime = newDate.format("h:ma");
+  meet.endTime = newDate.format("hh:mma");
   return meet;
 }
 
